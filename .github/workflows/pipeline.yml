@@ -33,6 +33,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add docs/index.html weather.db
           git diff --cached --quiet || git commit -m "chore: update weather forecast and poem [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push
